@@ -26,5 +26,17 @@ describe "Homepage" do
   	expect(elements[5].text).to eq('TV')
   	expect(elements[6].text).to eq('WINTER STORMS')
 	end
+	
+	it 'tests city lookup with zipcode' do
+		element = @driver.find_element(:class => "input--search")
+		element.send_keys "08034"
+		element.send_keys :enter
+
+	end
+
+	it 'displays proper city' do
+		element = @driver.find_element(:class => "ng-binding")
+
+	end
 
 end
